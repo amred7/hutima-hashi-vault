@@ -15,11 +15,11 @@ jobs:
         run: terraform init
       - name: Terraform plan
         run: terraform plan
-        # env:
+        env:
         #   VAULT_ADDR: ${{ secrets.VAULT_ADDR }}
         #   VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
-        #   TF_VAR_token: ${{ secrets.TF_VAR_token }}
-        #   TF_VAR_secret_example: ${{ secrets.TF_VAR_secret_example }}
+           TF_VAR_token: ${{ secrets.TF_VAR_token }}
+           TF_VAR_secret_example: ${{ secrets.TF_VAR_secret_example }}
     
     #   - name: Terraform Apply
     #     run: terraform apply -auto-approve
