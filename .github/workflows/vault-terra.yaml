@@ -20,7 +20,7 @@ jobs:
         #   VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
            TF_VAR_token: ${{ secrets.TF_VAR_token }}
            TF_VAR_secret_example: ${{ secrets.TF_VAR_secret_example }}
-           TF_VAR_sa_acces_key: ${{ secrets.sa_acces_key }}
+           ARM_ACCESS_KEY : ${{ secrets.sa_acces_key }}
     
     #   - name: Terraform Apply
     #     run: terraform apply -auto-approve
