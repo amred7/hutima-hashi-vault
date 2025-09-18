@@ -14,7 +14,7 @@ jobs:
       - name: Terraform Init
         run: terraform init
       - name: Terraform plan
-        run: terraform plan
+        run: terraform plan -backend-config backend/backend.tf
         env:
         #   VAULT_ADDR: ${{ secrets.VAULT_ADDR }}
         #   VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
