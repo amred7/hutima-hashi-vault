@@ -1,0 +1,31 @@
+# workflow for execute a terraform deployment for vault conf
+name: vault-terra
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.13.3
+      - name: Terraform Init
+        run: terraform init
+      - name: Terraform plan
+        run: terraform plan
+        # env:
+        #   VAULT_ADDR: ${{ secrets.VAULT_ADDR }}
+        #   VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
+        #   TF_VAR_token: ${{ secrets.TF_VAR_token }}
+        #   TF_VAR_secret_example: ${{ secrets.TF_VAR_secret_example }}
+    
+    #   - name: Terraform Apply
+    #     run: terraform apply -auto-approve
+    #     env:
+    #       VAULT_ADDR: ${{ secrets.VAULT_ADDR }}
+    #       VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
+    #       TF_VAR_token: ${{ secrets.TF_VAR_token }}
+    #       TF_VAR_secret_example: ${{ secrets.TF_VAR_secret_example }}
+    
