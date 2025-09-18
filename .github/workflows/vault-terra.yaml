@@ -12,7 +12,7 @@ jobs:
         with:
           terraform_version: 1.13.3
       - name: Terraform Init
-        run: terraform init -backend-config backend/backend.tf
+        run: terraform init -backend-config backend/backend.hcl
       - name: Terraform plan
         run: terraform plan 
         env:
