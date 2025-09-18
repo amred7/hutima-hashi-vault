@@ -7,7 +7,3 @@ variable "secret_example" {
   type      = string
   sensitive = true
 }
-variable "sa_acces_key" {
-  type      = string
-  sensitive = true
-}
