@@ -12,7 +12,7 @@ jobs:
         with:
           terraform_version: 1.13.3
       - name: Terraform Init
-        run: terraform init -backend-config backend/backend.hcl
+        run: terraform init -backend-config=backend/backend.hcl -backend-config="access_key=${{ secrets.SA_ACCES_KEY }}"
       - name: Terraform plan
         run: terraform plan 
         env:
